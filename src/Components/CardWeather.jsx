@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../Styles/CardWeather.css";
+import optional from "/src/logo.svg";
 import bgBeach from "/src/Video/bgBeach.mp4";
 
 /**
@@ -58,7 +59,7 @@ const CardWeather = () => {
     navigator.geolocation.getCurrentPosition(success);
   }, []);
 
-  // console.log(data);
+  //console.log(data);
   //console.log(degrees);
 
   /**
@@ -184,7 +185,7 @@ const CardWeather = () => {
         <div className="card__info-pronostics">
           <ul className="card__date">
             <li className="date__0">
-              <img src="./src/logo.svg" style={{ width: "140%" }} alt="sun" />
+              <img src={optional} style={{ width: "140%" }} alt="sun" />
             </li>
             <li className="date__1">
               <h3>Today</h3>
@@ -192,32 +193,32 @@ const CardWeather = () => {
             </li>
             <li className="date__2">
               <h3>Tue</h3>
-              <img src="./src/logo.svg" style={{ width: "70%" }} alt="sun" />
+              <img src={optional} style={{ width: "70%" }} alt="sun" />
               <span>12°</span>
             </li>
             <li className="date__3">
               <h3>Wed</h3>
-              <img src="./src/logo.svg" style={{ width: "70%" }} alt="sun" />
+              <img src={optional} style={{ width: "70%" }} alt="sun" />
               <span>10°</span>
             </li>
             <li className="date__4">
               <h3>Thu</h3>
-              <img src="./src/logo.svg" style={{ width: "70%" }} alt="sun" />
+              <img src={optional} style={{ width: "70%" }} alt="sun" />
               <span>8°</span>
             </li>
             <li className="date__5">
               <h3>Fri</h3>
-              <img src="./src/logo.svg" style={{ width: "70%" }} alt="sun" />
+              <img src={optional} style={{ width: "70%" }} alt="sun" />
               <span>8°</span>
             </li>
             <li className="date__6">
               <h3>Sat</h3>
-              <img src="./src/logo.svg" style={{ width: "70%" }} alt="sun" />
+              <img src={optional} style={{ width: "70%" }} alt="sun" />
               <span>4°</span>
             </li>
             <li className="date__7">
               <h3>Sun</h3>
-              <img src="./src/logo.svg" style={{ width: "70%" }} alt="sun" />
+              <img src={optional} style={{ width: "70%" }} alt="sun" />
               <span>-2°</span>
             </li>
           </ul>
