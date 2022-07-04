@@ -1,0 +1,255 @@
+.card__container {
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.card__container video {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+  /* opacity: .95; */
+}
+
+.card {
+  width: 50rem;
+  height: 28rem;
+  background-color: rgba(226, 229, 226, 0.302);
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 0.5rem;
+  color: white;
+  overflow: hidden;
+  position: absolute;
+}
+
+.bg__container img {
+  width: 100%;
+  position: relative;
+  /* opacity: 0.95; */
+  border-radius: 0.4rem;
+  background-color: blue;
+}
+
+.card__info-today {
+  /* background-color: mediumaquamarine; */
+  position: relative;
+  bottom: 33.5rem;
+  /* display: flex; */
+}
+
+.card__date-today {
+  /* background-color: mediumblue; */
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 3rem;
+  color: rgb(255, 255, 255);
+}
+
+.today,
+.country {
+  /* background-color: mediumorchid; */
+  display: flex;
+  flex-direction: column;
+}
+
+.today,
+.country {
+  margin-block: 1.1rem 0.1rem;
+  padding-block: 0.2rem;
+}
+
+.time {
+  font-size: 3.3rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.time span {
+  font-size: 1.1rem;
+}
+
+.date {
+  font-size: 1.1rem;
+  /* font-weight: 500; */
+}
+
+.country {
+  gap: 0.3rem;
+  color: white;
+}
+
+.country i {
+  color: rgba(250, 18, 96, 0.9);
+}
+
+.name__city {
+  font-size: 1.6rem;
+}
+
+.name__country {
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.card__info-secondary {
+  /* background-color: palegoldenrod; */
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 2rem;
+  text-align: left;
+  font-size: 0.63rem;
+  position: relative;
+}
+
+.secondary__info {
+  /* background-color: rgb(100, 169, 100); */
+  padding: 1rem;
+  background-image: linear-gradient(
+    to left,
+    rgba(30, 45, 30, 0.055),
+    rgba(30, 45, 30, 0.17)
+  );
+  border-radius: 2rem;
+  box-shadow: -15px 1px 35px 2px rgba(30, 31, 30, 0.19);
+}
+
+.card__temp {
+  /* background-color: brown; */
+  text-align: center;
+  position: relative;
+  left: 2rem;
+  bottom: 2rem;
+  box-shadow: 1px 1px 50px rgba(33, 34, 33, 0.23);
+  background-color: rgba(33, 34, 33, 0.11);
+  border-radius: 1rem;
+  padding: 0.8rem;
+}
+
+.card__temp-description {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+.card__temp-today {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.secondary__info h2 {
+  font-weight: 300;
+  margin-bottom: 0.3rem;
+}
+
+.card__info-secondary i {
+  /* color: rgba(250, 18, 96, 0.7); */
+  margin-inline: 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.card__info-secondary span {
+  background-color: rgba(50, 47, 47, 0.3);
+  border-radius: 0.1rem;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.card__btn-degrees {
+  /* background-color: mediumslateblue; */
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: rgba(130, 218, 130, 0.452);
+  padding: 0.4rem 2.5rem 0.4rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 300;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: rgba(0, 128, 0, 0.519);
+}
+
+.degrees {
+  position: absolute;
+  top: 7rem;
+  right: -1rem;
+}
+
+.card__info-pronostics {
+  /* background-color: #191919; */
+  background-image: linear-gradient(
+    to top,
+    rgba(130, 145, 130, 0.5),
+    rgba(130, 145, 130, 0.1)
+  );
+  flex-direction: column;
+  padding: 1rem 1.5rem;
+  position: relative;
+  bottom: 33rem;
+}
+
+.card__date {
+  display: flex;
+}
+
+.card__date li {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__date li img {
+  border-radius: 100%;
+  margin-block: 0.5rem;
+}
+
+.date__0 {
+  /* background-color: paleturquoise; */
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.card__date li h3 {
+  background-color: rgba(20, 20, 20, 0.663);
+  border-radius: 1rem;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.card__date li span:not(.date__1-grade) {
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+.date__1 {
+  /* background-color: palevioletred; */
+  align-items: center;
+  justify-content: center;
+}
+
+.date__1-grade {
+  font-size: 2.8rem;
+  font-weight: 300;
+}
