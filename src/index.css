@@ -17,7 +17,8 @@ span,
 button,
 p,
 ul,
-li {
+li,
+img {
   margin: 0;
   padding: 0;
 }

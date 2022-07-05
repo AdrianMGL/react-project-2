@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../Styles/CardWeather.css";
-import optional from "/src/logo.svg";
+import CardInfoPronostics from "./CardInfoPronostics";
 import bgBeach from "/src/Video/bgBeach.mp4";
 
 /**
@@ -31,8 +31,13 @@ let time = d.toLocaleString([], {
 const CardWeather = () => {
   /** */
   const apiKey = "dab77bea1efba5901788df3eeec113cd";
+  //const apiKeyForecast = "5406ab4a9e35ae5d255bbc503fe31a98";
+  //const oneCall = "c50cbee80bc0b08f7fbee10af4bca78f";
+
   const [data, setData] = useState({});
+  const [forecast, setForecastData] = useState({});
   const iconWeather = `http://openweathermap.org/img/wn/${data.weather?.[0].icon}@2x.png`;
+
   const [degrees, setDegrees] = useState(0);
   const [isFahrenheit, setIsFahrenheit] = useState(true);
 
@@ -44,6 +49,10 @@ const CardWeather = () => {
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
+          //  `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKeyForecast}`
+
+          // `https://api.openweathermap.org/data/2.5/forecast?lat=19.5789&lon=-101.6496&appid=5406ab4a9e35ae5d255bbc503fe31a98`
+          // https://api.openweathermap.org/data/2.5/forecast?lat=19.5789&lon=-101.6496&appid=dab77bea1efba5901788df3eeec113cd
         )
         .then((res) => {
           setData(res.data);
@@ -59,19 +68,12 @@ const CardWeather = () => {
     navigator.geolocation.getCurrentPosition(success);
   }, []);
 
-  //console.log(data);
-  //console.log(degrees);
+  // console.log(data);
 
   /**
    *
    * CONVERT
    */
-
-  // console.log(degrees);
-
-  /** (296.46 K − 273.15) × 9/5 + 32 = 73.958 °F */
-  /** (73.958 °F − 32) × 5/9 = 23.31 °C */
-  /** (23.31 °C × 9/5) + 32 = 73.958 °F */
 
   const convertDegrees = () => {
     //const degreeCelsius = (((degreeKelvinFahrenheit - 32) * 5) / 9).toFixed(2);
@@ -111,10 +113,7 @@ const CardWeather = () => {
         <div className="card__info-today">
           <div className="card__date-today">
             <div className="today">
-              <h2 className="time">
-                {/* <i class='bx bx-calendar fa-2x'></i> */}
-                {time}
-              </h2>
+              <h2 className="time">{time}</h2>
               <span className="date">
                 {day}, {date} {month} {year}.
               </span>
@@ -182,47 +181,13 @@ const CardWeather = () => {
           </div>
         </div>
 
-        <div className="card__info-pronostics">
-          <ul className="card__date">
-            <li className="date__0">
-              <img src={optional} style={{ width: "140%" }} alt="sun" />
-            </li>
-            <li className="date__1">
-              <h3>Today</h3>
-              <span className="date__1-grade">12°</span>
-            </li>
-            <li className="date__2">
-              <h3>Tue</h3>
-              <img src={optional} style={{ width: "70%" }} alt="sun" />
-              <span>12°</span>
-            </li>
-            <li className="date__3">
-              <h3>Wed</h3>
-              <img src={optional} style={{ width: "70%" }} alt="sun" />
-              <span>10°</span>
-            </li>
-            <li className="date__4">
-              <h3>Thu</h3>
-              <img src={optional} style={{ width: "70%" }} alt="sun" />
-              <span>8°</span>
-            </li>
-            <li className="date__5">
-              <h3>Fri</h3>
-              <img src={optional} style={{ width: "70%" }} alt="sun" />
-              <span>8°</span>
-            </li>
-            <li className="date__6">
-              <h3>Sat</h3>
-              <img src={optional} style={{ width: "70%" }} alt="sun" />
-              <span>4°</span>
-            </li>
-            <li className="date__7">
-              <h3>Sun</h3>
-              <img src={optional} style={{ width: "70%" }} alt="sun" />
-              <span>-2°</span>
-            </li>
-          </ul>
-        </div>
+        {/*  */}
+
+        <CardInfoPronostics
+          iconWeather={iconWeather}
+          alt={data.weather?.[0].main}
+          degrees={degrees}
+        />
       </div>
     </div>
   );
